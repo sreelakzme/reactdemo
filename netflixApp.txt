@@ -1,0 +1,231 @@
+INDEX.JS
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Card from './Cards';
+import './index.css';
+import Sdata from './Sdata'
+
+// function ncard(val){
+  
+
+// }
+
+ReactDOM.render(
+  <>
+   <h1 className="heading_style">
+     List of top five Netflix Series
+   </h1>
+
+  
+  {Sdata.map((val)=>
+  {
+    return(
+    <Card 
+    imgscr={val.imgscr}
+    title={val.title}
+    sname={val.sname}
+    links={val.links}
+  />
+  );
+  })}  
+  </>,
+  document.getElementById("root")
+);
+
+
+CARDS.JSX
+
+import React from 'react';
+
+function Card(props){
+    return(<>
+      <div className="cards">
+      <div className="card">
+      <img src={props.imgscr} alt="Mypic" className="card_img">
+      </img>
+      <div className="card__info">
+      <span className="card__category">{props.title}</span>
+      <h3 className="card__title">{props.sname}</h3>
+      <a href={props.links} target="_blank">
+        <button>Watch Now</button>
+      </a>
+    
+      </div>
+    
+      </div>
+    
+      </div>
+      </>
+  
+    );
+  }
+
+  export default Card;
+
+INDEX.CSS
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    background-color: cyan;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    
+}
+.heading_style{
+    padding: 30px 0;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #041858;
+    background-color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.cards{
+    width: 100%;
+    height:auto;
+}
+.card{
+    margin:6%;
+    transition: all 0.4s cubic-bezier(0.175,0.885,0,1);
+    background-color: #ffffff;
+    width: 21.25%;
+    border-radius: 12px;
+    box-shadow: 0px 13px -7px rgba(0,0,0,0.1);
+    float: left;
+}
+card:hover{
+    box-shadow: 0px 30px 18px -8px rgba(0,0,0,0.1);
+    transform: scale(1.05,1.05);
+}
+/* div{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* h1{
+    padding: 20px 20px;
+    background-color: rgb(236, 110, 188);
+    color: rgb(73, 4, 13);
+    border-radius: 20px;
+} */
+span{
+    color: chocolate;
+}
+h3{
+    color: #041858;
+}
+
+.card_img{
+    width: 100%;
+    height: 235px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px ;
+}
+.card__info{
+    background-color: #ffffff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+    background-color: #ffffff;
+
+}
+
+.card__category{
+    font-family: "Raleway",sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color:#041858;
+    background-color: #ffffff;
+}
+img{
+    widows: 100%;
+    height:auto;
+
+}
+button{
+    padding: 5px 8px;
+    font-family: "Raleway",sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: blueviolet;
+    background-color: #ffffff;
+    outline: none;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+
+/* .img_div{
+    width: 250px;
+    height: 350px;
+    margin: auto;
+
+} */
+
+SDATA.JSX
+
+const Sdata= [
+    {
+        sname:"Dark",
+        imgscr:"https://picsum.photos/200/300" ,
+        title:"A Netflix Original Series ",  
+        
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+    {
+        sname:"Sanam Re" ,
+        imgscr:"https://picsum.photos/250/300", 
+        title:"A Netflix seies" ,
+        
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+    {
+        sname:"Tere Naam", 
+        imgscr:"https://picsum.photos/200/350",
+         title:"Amazon Series",
+          
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+    {
+        sname:"Tere Naam", 
+        imgscr:"https://picsum.photos/200/350",
+         title:"Amazon Series",
+          
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+    {
+        sname:"Tere Naam", 
+        imgscr:"https://picsum.photos/200/350",
+         title:"Amazon Series",
+          
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+    {
+        sname:"Tere Naam", 
+        imgscr:"https://picsum.photos/200/350",
+         title:"Amazon Series",
+          
+        links:"https://www.youtube.com/watch?v=HRhJVGjIraE&list=PLwGdqUZWnOp3aROg4wypcRhZqJG3ajZWJ&index=22",
+    },
+];
+
+export default Sdata;
+
+
+
+

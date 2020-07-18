@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+
+const App =()=>{
+
+  const [name,addName]=useState("");
+  const [fulName,setFullname]=useState(name);
+
+  const InputEvent=(event)=>{
+    // console.log(event.target.value);
+    addName(event.target.value);
+  }
+  
+
+  const changeName=(event)=>{
+    // console.log(event.target.value);
+    setFullname(name);
+
+  }
+  return(
+    <>
+    <div>
+      <h1>Hello!! {fulName}</h1>
+      <input type='text' placeholder='Enter your name' onChange={InputEvent} value={name}/>
+      <button onClick={changeName} >Click Me😈</button>
+    </div>
+    </>
+
+  );
+};
+
+export default App;
