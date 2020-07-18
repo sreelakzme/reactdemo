@@ -1,0 +1,55 @@
+//Index.jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+
+ReactDOM.render(
+ <App/>,
+  document.getElementById("root")
+);
+
+
+
+import React from 'react';
+import add, {sub, div,mult} from './Calc';
+
+function App(){
+    return(
+        <>
+        <ul>
+          <li>Sum of two no is {add(40,4)}</li>
+          <li>Sub of two no is {sub(40,20)}</li>
+          <li>Div of two no is {div(40,3)}</li>
+          <li>Mult of two no is {mult(4,2)}</li>
+        </ul>
+      </>
+    );
+}
+
+
+export default App;
+
+
+Calc.jsx
+
+function add(n, m) {
+    let s = n + m;
+    return s;
+}
+function sub(n,m){
+    let s = n - m;
+    return s;
+}
+function div(n,m){
+    let s = n / m;
+    s = s.toFixed(2);
+    return s;
+}
+function mult(n,m){
+    let s = n * m;
+    return s;
+}
+
+export default add;
+export { sub, div, mult};

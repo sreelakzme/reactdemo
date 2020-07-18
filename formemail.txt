@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+
+const App = ()=>{
+  const [fulName,getName]=useState({
+    first:'',
+    last:'',
+    email:'',
+    no:'',
+  });
+ 
+  
+
+  const InputFirst=(event)=>{
+    console.log(event.target.value);
+    getName(event.target.name);
+
+
+  };
+  
+  const changeName=(event)=>{
+    event.preventDefault();
+    alert('Form submitted!!');
+    
+  };
+
+  return(
+    <>
+  <div>
+    <form onSubmit={changeName} >
+    <h1>Hello! {fulName.first}  {fulName.last} </h1>
+    <h2>{fulName.email}</h2>
+    
+    <input type='text' placeholder="Enter your name" name="fName"onChange={InputFirst} value={fulName.first} /><br></br>
+    <input type='text' placeholder="Enter last name" name="lName" onChange={InputFirst} value={fulName.last}/>
+    <br>
+    </br>
+    <input type='email' placeholder="Enter Your email" name="eMail" onChange={InputFirst} value={fulName.email}/>
+    <br></br>
+    <input type='number' placeholder="Enter Your phone number" name="phNumber" onChange={InputFirst} value={fulName.no}/>
+    <br></br><button type='submit' >Click here  </button>
+    </form>
+    </div>
+    </>
+
+  );
+
+};
+export default App;

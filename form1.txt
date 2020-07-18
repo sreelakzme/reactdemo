@@ -1,0 +1,42 @@
+import React, { useState } from 'react';
+
+const App =()=>{
+
+  const [name,addName]=useState("");
+  const [lastname,setLast]=useState("");
+  const [fulName,setFullname]=useState(name);
+  const [pass,setPass]=useState(lastname);
+
+  const InputEvent=(event)=>{
+    // console.log(event.target.value);
+    addName(event.target.value);
+  }
+  const InputPass=(event)=>{
+    // console.log(event.target.value);
+    setLast(event.target.value);
+  }
+  
+
+  const changeName=(event)=>{
+    event.preventDefault();
+    console.log(event.target.value);
+    setFullname(name);
+    setPass(lastname);
+
+  }
+  return(
+    <>
+    <div>
+    <form onSubmit={changeName}>
+      <h1>Hello!! {fulName}{pass}</h1>
+      <input type='text' placeholder='Enter your name' onChange={InputEvent} value={name}/><br></br>
+      <input type='text' placeholder='Enter your password' onChange={InputPass} value={lastname}/><br></br>
+      <button type='submit'>Click Me😈</button>
+      </form>
+    </div>
+    </>
+
+  );
+};
+
+export default App;

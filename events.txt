@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+
+const App=()=>{
+  const purple= '#8e44ad';
+  const [bg, setBg]=useState(purple);
+  const [name,setName]=useState('Click me');
+
+  const bgChange=()=>{
+    let newBg= 'blue';
+    setBg(newBg);
+    setName("ouch!! 😸")
+    
+  };
+  const bgBack=()=>{
+    setBg(purple);
+    setName("Wow!! 😈")
+    
+  };
+  return(
+    <>
+    <div style={ { backgroundColor: bg}}>
+      <button onMouseOver={bgChange} onMouseOut={bgBack}> {name} </button>
+    </div>
+    </>
+  )
+
+}
+
+export default App;
